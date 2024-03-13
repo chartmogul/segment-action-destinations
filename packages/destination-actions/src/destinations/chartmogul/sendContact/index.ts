@@ -84,7 +84,6 @@ const action: ActionDefinition<Settings, Payload> = {
     }
   },
   perform: (request, data) => {
-    console.log(data.payload)
     if (!data.payload.user_id && !data.payload.anonymous_id) {
       throw new PayloadValidationError(`The user_id and/or anonymous_id must be present`)
     }
