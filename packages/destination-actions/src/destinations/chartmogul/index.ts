@@ -16,7 +16,7 @@ const destination: DestinationDefinition<Settings> = {
     fields: {
       chartmogul_webhook_url: {
         label: 'ChartMogul webhook URL',
-        description: 'Copy the webhook URL from ChartMogul CRM and paste it here',
+        description: 'Copy the webhook URL from ChartMogul and paste it here',
         type: 'string',
         required: true
       }

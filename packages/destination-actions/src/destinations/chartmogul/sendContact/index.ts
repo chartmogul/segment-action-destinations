@@ -85,7 +85,7 @@ const action: ActionDefinition<Settings, Payload> = {
   },
   perform: (request, data) => {
     if (!data.payload.user_id && !data.payload.anonymous_id) {
-      throw new PayloadValidationError(`The user_id and/or anonymous_id must be present`)
+      throw new PayloadValidationError(`The user_id and/or anonymous_id must be present.`)
     }
 
     if (data.payload.company && !data.payload.company.id) {
@@ -95,7 +95,7 @@ const action: ActionDefinition<Settings, Payload> = {
     // we definitely map type, message_id, timestamp, sent_at, and (user_id or anonymous_id)
     // A mapping containing only these fields is not useful.
     if (Object.keys(data.payload).length <= 5) {
-      throw new PayloadValidationError('The payload contains no useful information')
+      throw new PayloadValidationError('The event does not contains useful information.')
     }
 
     return request(data.settings.chartmogul_webhook_url, {

@@ -2,7 +2,7 @@
 
 export interface Settings {
   /**
-   * Copy the webhook URL from ChartMogul CRM and paste it here
+   * Copy the webhook URL from ChartMogul and paste it here
    */
   chartmogul_webhook_url: string
 }
