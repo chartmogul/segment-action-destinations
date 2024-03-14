@@ -8,14 +8,14 @@ const action: ActionDefinition<Settings, Payload> = {
   description: 'Send a Customer (company) to ChartMogul CRM',
   defaultSubscription: 'type = "group"',
   fields: {
-    type: event_type('Send Customer'),
+    type: { ...event_type, default: 'Send Customer' },
     message_id,
     timestamp,
     sent_at,
-    user_id: user_id(true),
+    user_id: { ...user_id, required: true },
     group_id: {
       label: 'Group Id',
-      description: 'Segment Group Id. This field is required',
+      description: 'Segment Group Id',
       type: 'string',
       required: true,
       default: { '@path': '$.groupId' }

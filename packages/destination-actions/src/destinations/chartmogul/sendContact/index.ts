@@ -8,12 +8,12 @@ const action: ActionDefinition<Settings, Payload> = {
   description: 'Send a Contact to ChartMogul CRM',
   defaultSubscription: 'type = "identify"',
   fields: {
-    type: event_type('Send Contact'),
+    type: { ...event_type, default: 'Send Contact' },
     message_id,
     timestamp,
     sent_at,
-    user_id: user_id(false),
-    anonymous_id: anonymous_id(false),
+    user_id,
+    anonymous_id,
     email: {
       label: 'Email',
       description: "The user's email",

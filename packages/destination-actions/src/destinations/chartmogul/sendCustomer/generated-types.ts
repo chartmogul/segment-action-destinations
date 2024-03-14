@@ -2,15 +2,15 @@
 
 export interface Payload {
   /**
-   * The type of event. This field is required
+   * The type of event
    */
   type: string
   /**
-   * The Segment message id. This field is required
+   * The Segment message id
    */
   message_id: string
   /**
-   * The timestamp at which the event was created. This field is required
+   * The timestamp at which the event was created
    */
   timestamp: string | number
   /**
@@ -22,7 +22,7 @@ export interface Payload {
    */
   user_id: string
   /**
-   * Segment Group Id. This field is required
+   * Segment Group Id
    */
   group_id: string
   /**
