@@ -95,7 +95,7 @@ const action: ActionDefinition<Settings, Payload> = {
     // we definitely map type, message_id, timestamp, sent_at, and (user_id or anonymous_id)
     // A mapping containing only these fields is not useful.
     if (Object.keys(data.payload).length <= 5) {
-      throw new PayloadValidationError('The event does not contains useful information.')
+      throw new PayloadValidationError('The event contains no information of interest to Chartmogul.')
     }
 
     return request(data.settings.chartmogul_webhook_url, {

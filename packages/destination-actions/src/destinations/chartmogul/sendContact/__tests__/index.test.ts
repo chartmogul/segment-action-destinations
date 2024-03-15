@@ -44,7 +44,7 @@ describe('Chartmogul.sendContact', () => {
         settings: { chartmogul_webhook_url: CHARTMOGUL_WEBHOOK_URL }
       })
     } catch (err: any) {
-      expect(err.message).toContain('The event does not contains useful information.')
+      expect(err.message).toContain('The event contains no information of interest to Chartmogul.')
     }
   })
 
@@ -55,7 +55,7 @@ describe('Chartmogul.sendContact', () => {
         settings: { chartmogul_webhook_url: CHARTMOGUL_WEBHOOK_URL }
       })
     } catch (err: any) {
-      expect(err.message).toContain('The event does not contains useful information.')
+      expect(err.message).toContain('The event contains no information of interest to Chartmogul.')
     }
   })
 

@@ -22,12 +22,12 @@ const destination: DestinationDefinition<Settings> = {
       }
     },
     testAuthentication: (request, auth) => {
-      const target_url = auth?.settings?.chartmogul_webhook_url
-      if (!target_url || !target_url.startsWith('https://')) {
+      const targetUrl = auth?.settings?.chartmogul_webhook_url
+      if (!targetUrl || !targetUrl.startsWith('https://')) {
         throw new InvalidAuthenticationError('Please configure the ChartMogul webhook URL.')
       }
 
-      return request(target_url, {
+      return request(targetUrl, {
         method: 'post',
         json: {}
       })
